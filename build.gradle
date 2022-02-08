@@ -1,8 +1,9 @@
 plugins {
-    id 'java'
+    id "java-library"
+    id "eu.cloudnetservice.juppiter" version "0.3.0"
 }
 
-group 'me.derklaro'
+group 'dev.derklaro'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -10,17 +11,14 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'org.jetbrains', name: 'annotations', version: '23.0.0'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
-    testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.1.0'
-}
-
-test {
-    useJUnitPlatform()
+    moduleLibrary group: 'org.jetbrains', name: 'annotations', version: '23.0.0'
 }
 
 compileJava {
     targetCompatibility = JavaVersion.VERSION_17.toString()
     sourceCompatibility = JavaVersion.VERSION_17.toString()
+}
+
+moduleJson {
+    main = "Abc"
 }
